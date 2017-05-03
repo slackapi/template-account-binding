@@ -1,0 +1,24 @@
+if loginError
+  .error-msg
+    p= loginError
+form.login(action='/login', method='post')
+  div
+    label(for='username') Username
+    input(type='text', id='username', name='username')
+  div
+    label(for='password') Password
+    input(type='password', id='password', name='password')
+  div
+    input(type='hidden', name='_csrf', value=csrfToken)
+  if loginFormExtraParams
+    each value, key in loginFormExtraParams
+      div
+        input(type='hidden', name=key, value=value)
+
+  div
+    button(type='submit') Login
+
+  if nonce
+    a(href='/register?ref=' + nonce) Register
+  else
+    a(href='/register') Register

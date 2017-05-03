@@ -1,0 +1,15 @@
+extends layout.pug
+
+block content
+  h2= title
+
+  if mainMessage
+    p= mainMessage
+
+  if redirectUrl
+    p You will be redirected in a few seconds...
+    script.
+      window.setTimeout(function () { window.location.replace('!{redirectUrl}'); }, 6000);
+
+  if renderLoginForm
+    include includes/loginForm

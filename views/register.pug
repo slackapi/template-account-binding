@@ -1,0 +1,29 @@
+extends layout.pug
+
+block content
+  h2= title
+
+  if registrationError
+    .error-msg
+      p= registrationError
+
+  form.login(action='/register', method='post')
+    p User Registration
+    div
+      label(for='username') Username
+      input(type='text', id='username', name='username')
+    div
+      label(for='password') Password
+      input(type='password', id='password', name='password')
+    div
+      label(for='confirm_password') Confirm Password
+      input(type='password', id='confirm_password', name='confirmPassword')
+    div
+      input(type='hidden', name='_csrf', value=csrfToken)
+
+    if registerFormExtraParams
+      each value, key in registerFormExtraParams
+        div
+          input(type='hidden', name=key, value=value)
+    div
+      button(type='submit') Register

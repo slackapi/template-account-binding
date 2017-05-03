@@ -1,0 +1,4 @@
+.page-register .user-info,
+.page-link-slack .user-info {
+  display: none;
+}
