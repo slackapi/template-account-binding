@@ -9,13 +9,8 @@
   "session": {
     // one day
     "maxAge": 86400000,
-    "secret": "REPLACE_ME",
     // HTTPS-only cookies: set to `true` or the number of proxies to trust
     "secure": false
-  },
-  "slack": {
-    "verificationToken": "REPLACE_ME",
-    "botToken": "REPLACE_ME"
   },
   "routes": {
     "associationPath": "/link/slack"

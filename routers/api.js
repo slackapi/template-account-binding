@@ -1,11 +1,10 @@
-const config = require('config');
 const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
 
 const util = require('../lib/util');
 
-const slackVerificationToken = config.get('slack.verificationToken');
+const slackVerificationToken = process.env.SLACK_VERIFICATION_TOKEN;
 const httpClient = axios.create({
   headers: { 'User-Agent': util.packageIdentifier() },
 });

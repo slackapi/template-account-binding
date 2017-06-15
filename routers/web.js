@@ -57,7 +57,7 @@ module.exports = (db, users, message) => {
     maxAge: config.get('session.maxAge'),
     resave: false,
     store: new LevelStore(db),
-    secret: config.get('session.secret'),
+    secret: process.env.SESSION_SECRET,
     secure: !!(config.has('session.secure') && config.get('session.secure')),
     saveUninitialized: false,
   }));
