@@ -12,7 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "@slack/client": "^3.10.0",
-    "axios": "^0.16.1",
+    "axios": "^0.21.2",
     "bcrypt": "^1.0.2",
     "body-parser": "^1.17.1",
     "config": "^1.25.1",
